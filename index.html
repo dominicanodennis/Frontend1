@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+<script src="script.js"></script>
+
+    <script>
+
+        function PrimzahlCheck(zahl) {
+            zahl = parseInt(zahl, 10);
+            if (isNaN(zahl)) {
+                alert("zahl eingeben bitte");
+                return;
+
+            }
+            var grenzahl = zahl / 2;
+            var check = 1;
+            for (var i = 2; i <= grenzahl; i++) {
+                if (zahl % i == 0) {
+                    document.getElementById("txt").innerHTML = zahl +
+                            " ist keine primzahl weil teilbar durch " + i;
+                    check = 0;
+                }
+                if (check == 1) {
+                    var number = 1;
+                    document.getElementById('foo').innerHTML = Boolean(number)+ " huhu";
+                    document.getElementById('txt').innerHTML =  zahl + " ist eine primzahl";
+                    alert("primzahl");
+
+                    return;
+                }
+            }
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+<form name="PrimzahlFormular" action="">
+    <p>Geben Sie eine Zahl ein. Es wird geprueft, ob es sich um eine Primzahl handelt.</p>
+    <input type="text" name="Eingabezahl">
+    <input type="button" value="auf Primzahl checken"
+           onclick="PrimzahlCheck(document.PrimzahlFormular.Eingabezahl.value)">
+    <input type="text" name="Eingabezahl2">
+    <input type="button" value="rechne" onclick="rechne(document.PrimzahlFormular.Eingabezahl2.value)">
+</form>
+
+<div id="txt"></div>
+<p id="foo"></p>
+<p id="foo2"></p>
+
+</body>
+</html>
